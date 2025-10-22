@@ -173,4 +173,141 @@ print(paste("Subject 3 → Max:", max(student$Marks_sub3),
 
 
 
-#first find mean midean by creating csv file 
+#1 find mean midean by creating csv file 
+
+# Set working directory
+setwd("C:/Users/welcome/Desktop")
+
+# Read data from CSV file
+x <- read.csv("marks.csv")
+print(x)
+
+# Calculate mean and median
+m <- mean(x$marks)
+cat("\nMean of Student marks is:", m)
+
+med <- median(x$marks)
+cat("\nMedian of Student marks is:", med)
+
+
+
+#2. Pie Chart of Product Sales
+
+setwd("E:/Data Analytics")
+
+data <- read.csv("laptopsales.csv")
+print(data)
+
+# Draw pie chart
+pie(data$unit, data$Product, main = "Laptop Sale")
+
+# Pie chart with percentage
+perc <- round(100 * data$unit / sum(data$unit), 1)
+pie(data$unit, labels = perc, main = "Laptop Sale (%)")
+
+
+
+
+#3. Variance and Standard Deviation
+
+
+
+x <- c(25,34,22,56,64,46,53,31,26)
+cat("The list of values are:", x)
+
+# Calculate variance and SD
+v <- var(x)
+cat("\nVariance:", v)
+
+s <- sd(x)
+cat("\nStandard Deviation:", s)
+
+
+
+
+#4. Multiplication Table of a Number
+
+num <- as.integer(readline(prompt = "Enter a number: "))
+
+for(i in 1:10) {
+  print(paste(num, "x", i, "=", num * i))
+}
+
+
+
+#5. Concatenate Two Strings
+
+
+string1 <- "Programiz"
+string2 <- "Pro"
+
+# Using paste()
+result <- paste(string1, string2)
+print(result)
+
+
+
+#5. Concatenate Two Strings
+
+string1 <- "Programiz"
+string2 <- "Pro"
+
+# Using paste()
+result <- paste(string1, string2)
+print(result)
+
+
+
+
+
+#6. Histogram of Data
+
+
+v <- c(19, 23, 11, 5, 16, 21, 32, 14, 19, 27, 39)
+
+# Create histogram
+hist(v, xlab = "No. of Articles",
+     col = "blue", border = "black",
+     main = "Histogram of Articles")
+
+
+
+
+#7. Bar Chart for Monthly Sales
+
+
+setwd("E:/Data Analytics")
+
+data <- read.csv("monthlysales.csv")
+print(data)
+
+barplot(data$Profit,
+        names.arg = data$Month,
+        xlab = "Month", ylab = "Profit",
+        col = "blue",
+        main = "Monthly Sales")
+
+
+
+
+# 8 scatter Plot & Correlation
+
+
+# Sample data
+study_hours <- c(5, 7, 3, 8, 6, 9)
+exam_scores <- c(80, 85, 60, 90, 75, 95)
+
+# Correlation
+correlation <- cor(study_hours, exam_scores)
+print(round(correlation, 2))
+
+# Scatter plot
+plot(study_hours, exam_scores,
+     main = "Study Hours vs Exam Scores",
+     xlab = "Study Hours", ylab = "Exam Scores")
+
+# Regression line
+abline(lm(exam_scores ~ study_hours), col = "red")
+
+# Show correlation text
+text(4, 90, paste("Correlation:", round(correlation, 2)))
