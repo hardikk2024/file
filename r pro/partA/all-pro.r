@@ -169,6 +169,38 @@ print(paste("Subject 3 → Max:", max(student$Marks_sub3),
 
 
 
+
+
+
+#8   Import Data from Excel and Use Data Viewer Functions
+
+install.packages("readxl")
+library(readxl)
+
+newdat <- read_xlsx("C:/Users/welcome/Desktop/studentmarks.xlsx")
+
+View(newdat)
+
+dim(newdat)
+
+head(newdat)
+
+tail(newdat)
+
+df1 <- newdat[newdat$marks > 70, ]
+print(df1)
+
+df2 <- newdat[order(newdat$marks), ]
+print(df2)
+
+df3 <- newdat[order(newdat$studentname), ]
+print(df3)
+
+rm(newdat)
+
+
+
+
 # part B 
 
 
@@ -298,3 +330,4 @@ abline(lm(exam_scores ~ study_hours), col = "red")
 
 # Show correlation text
 text(4, 90, paste("Correlation:", round(correlation, 2)))
+
