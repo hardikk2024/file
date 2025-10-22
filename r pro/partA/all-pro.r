@@ -175,14 +175,11 @@ print(paste("Subject 3 → Max:", max(student$Marks_sub3),
 
 #1 find mean midean by creating csv file 
 
-# Set working directory
 setwd("C:/Users/welcome/Desktop")
 
-# Read data from CSV file
 x <- read.csv("marks.csv")
 print(x)
 
-# Calculate mean and median
 m <- mean(x$marks)
 cat("\nMean of Student marks is:", m)
 
@@ -245,16 +242,6 @@ string2 <- "Pro"
 result <- paste(string1, string2)
 print(result)
 
-
-
-#5. Concatenate Two Strings
-
-string1 <- "Programiz"
-string2 <- "Pro"
-
-# Using paste()
-result <- paste(string1, string2)
-print(result)
 
 
 
